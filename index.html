@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script> -->
+    <style>
+        body {
+            background-color: rgba(green, blue, yellow, 0.5);
+            color: #325fa0;
+        }
+
+        .text {
+            font-weight: bolder;
+        }
+
+        #box {
+            width: 140px;
+            height: 140px;
+            background-color: red;
+            display: none;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Testing Your Reaction !</h1>
+    <p class="text">Reaction Time: <span id="time">0</span> Seconds</p>
+
+    <div id="box"></div>
+
+    <script type="text/javascript">
+        var createdTime;
+        var clickerTime;
+        var reactionTime;
+
+        // while(true){
+        //     var time = Math.random();
+        //     time = time * 1000;
+
+        //     setTimeout(function (param) {
+        //         document.getElementById('box').click();
+        //     }, time);
+        // }
+
+        if (document.getElementById('box').style.display === "block") {
+            clickBox();
+        }
+
+        document.getElementById('box').onclick = function () {
+            this.style.display = "none";
+            clickerTime = Date.now();
+            reactionTime = (clickerTime - createdTime) / 1000;      //milliseconds
+            document.getElementById('time').innerHTML = reactionTime;
+
+            makeBox();
+        }
+
+        makeBox();
+
+        function clickBox() {
+            // var time = Math.random();
+            // time = time * 2000 + 2;
+
+            setTimeout(function () {
+                document.getElementById('box').click();
+            }, 2000);
+        }
+
+        function getRandomColor() {
+            var max1 = 220;
+            var min1 = 30;
+            var max2 = 220;
+            var min2 = 30;
+            var max3 = 220;
+            var min3 = 30;
+
+            var red = Math.floor(Math.random() * (max1 - min1 + 1)) + min1;
+            //Math.round() is also good but not suit here
+            var green = Math.floor(Math.random() * (max2 - min2 + 1)) + min2;
+            var blue = Math.floor(Math.random() * (max3 - min3 + 1)) + min3;
+
+            var color = "rgba(" + red + ", " + green + ", " + blue + ", 1.0)";     //string must be
+            return color;
+        }
+
+        function makeBox() {
+            var time = Math.random();
+            time = time * 1000;
+
+            setTimeout(function () {
+                if (Math.random() >= 0.5) {
+                    document.getElementById('box').style.borderRadius = "70px";
+                } else {
+                    document.getElementById('box').style.borderRadius = "0px";
+                }
+
+                // console.log(window.innerWidth);
+                // console.log(window.innerHeight);
+                // console.log(document.documentElement.clientWidth);      //both can be used
+                // console.log(document.documentElement.clientHeight);
+
+                var max = window.innerHeight - 280;
+                var min = 0;
+
+                var top = Math.floor(Math.random() * (max - min + 1)) + min;
+
+                max = window.innerWidth - 140;
+                min = 0;
+                var left = Math.floor(Math.random() * (max - min + 1)) + min;
+
+                document.getElementById('box').style.top = top + "px";
+                document.getElementById('box').style.left = left + "px";
+                document.getElementById('box').style.backgroundColor = getRandomColor();
+                document.getElementById('box').style.display = "block";     //react() 用function 包無法作用
+                createdTime = Date.now();
+            }, time);
+
+            clickBox();
+        }
+
+        // function react() {
+        //     document.getElementById('box').style.display = "block";
+        // }
+
+    </script>
+</body>
+
+</html>
