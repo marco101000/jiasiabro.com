@@ -48,6 +48,10 @@ if ($_SESSION["active"] == 0 || $_SESSION["control"] == 0) {
 				location.href = "mem_list.php";
 			});
 
+			$("#fav_res_btn").bind("click", function() {
+				location.href = "fav_res.php";
+			});
+
 			$("#nearby_restaurant_btn").bind("click", function() {
 				location.href = "restaurant_list.php";
 			});
@@ -160,7 +164,7 @@ if ($_SESSION["active"] == 0 || $_SESSION["control"] == 0) {
 						<div class="col-md-6 pt-5">
 							<h3 class="font-weight-bold">收藏餐廳</h3>
 							<p>挑選最喜歡的餐廳，收藏起來，想吃的時候直接打開來看</p>
-							<a href="" data-role="button" data-theme="a" data-icon="grid" data-transition="flip">收藏餐廳</a>
+							<a href="" data-role="button" data-theme="a" data-icon="grid" data-transition="flip" id="fav_res_btn">收藏餐廳</a>
 						</div>
 						<div class="col-md-6">
 							<img src="img/good-res.jfif" class="img-fluid" alt="">
@@ -200,7 +204,7 @@ if ($_SESSION["active"] == 0 || $_SESSION["control"] == 0) {
 						</div>
 					</div>
 
-					<div class="row timeline-pointer phone">
+					<div class="row flex-row-reverse timeline-pointer phone">
 						<div class="col-md-6 pt-5">
 							<h3 class="font-weight-bold">登出</h3>
 							<p>期待您的再次光臨，再見!</p>

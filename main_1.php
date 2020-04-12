@@ -4,25 +4,30 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/all.min.css">
 	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
 	<script src="js/jquery-2.1.0.min.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
-	<title>Document</title>
+	<script src="js/AD.js"></script>
 	<style>
 		.logo {
-			width: 450px;
-			/*height: 250px;*/
-			margin-top: 0;
-			margin-bottom: 0;
-			margin-left: auto;
-			margin-right: auto;
-			border: 2px solid #ccc;
-		}
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 0;
+            margin-bottom: 0;
+            border: 2px solid #0080ff;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 50%;
+            display: block;
+            position: relative;
+        }
 
 		#text {
 			font-size: 24px;
 			font-style: normal;
-			color: #2784d8;
+			color: 2784d8;
 			text-align: center;
 		}
 
@@ -33,6 +38,27 @@
 		.led-black {
 			background-color: black;
 		}
+
+		/*@media screen and (max-width: 576px;){
+			.logo {
+				width: 100%;
+				height: auto;*/
+				/*height: 250px;*/
+				/*margin-top: 0;
+				margin-bottom: 0;
+				margin-left: auto;
+				margin-right: auto;
+				border: 2px solid #ccc;
+				text-align: center;
+				background-image: url(food/f8.jpg);
+				background-position: center center;
+				-webkit-background-size: cover;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-attachment: fixed;
+
+			}
+		}*/
 	</style>
 	<script>
 		$(function() {

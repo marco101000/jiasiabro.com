@@ -125,7 +125,7 @@
 					}
 				});
 			} else if(!flag_check) {
-				alert("請檢察帳號");
+				alert("請檢查帳號");
 			} else {
 				//欄位驗證失敗
 				alert("尚有欄位錯誤請修正!!");
